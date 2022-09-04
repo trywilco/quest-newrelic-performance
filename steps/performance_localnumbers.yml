@@ -1,0 +1,50 @@
+id: performance_localnumbers
+hints:
+- Run `autocannon -a 100 -c 100` to test-simulate 100 users
+- Make sure you have enough items locally
+- Try to open the UI locally and see if it's slow
+startFlow:
+  do:
+  - actionId: bot_message
+    params:
+      person: head-of-rd
+      messages:
+      - text: OK, I'll make this quick, the team-based paintball game is about to start, and I need to be well-rested if I am to be the last person standing.
+        delay: 1200
+      - text: So, before we fix the problematic API endpoint, we need a way to know we've fixed it. That means **measuring how much time it takes for the code to run** right now, then using this number as a **benchmark** for everything we do.
+        delay: 3500
+      - text: Use the **[autocannon](https://github.com/mcollina/autocannon) tool** to do it. You'll find it very useful when you want to **measure API call** times. Just remember that we can’t just measure one request. **100 requests by a 100 clients in parallel will be enough.**
+        delay: 3000
+      - text: Also, make sure you have **at least 100 items** in your local database to simulate a real load on the system. 
+        delay: 2000
+      - text: If you don't, you can run our seeding script \`./seeds.sh\` once before running the autocannon tool. When you're done, **send me the average latency** recorded by autocannon (in ms).
+        delay: 2000
+trigger:
+  type: user_message
+  params:
+    person: head-of-rd
+  flowNode:
+    if:
+      conditions:
+      - conditionId: is_truthy
+        params:
+          value: ${Lodash.gt(userMessageText, 2000)}
+      then:
+        do:
+        - actionId: bot_message
+          params:
+            person: head-of-rd
+            messages:
+            - text: Oh my, that’s slower than a sleepy sloth!
+              delay: 1300
+        - actionId: finish_step
+      else:
+        do:
+        - actionId: bot_message
+          params:
+            person: head-of-rd
+            messages:
+            - text: Hmmm, this latency wouldn't have limited the performance as it did. Did you remember to **run the seeding script** in order to have items in your local database before measuring? 
+              delay: 1300
+            - text: "**Run `yarn seeds` if you didn't** and then try measuring again, please."
+              delay: 1300

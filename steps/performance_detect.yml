@@ -1,0 +1,64 @@
+id: performance_detect
+hints:
+- Try to open the frontend app and see if there’s any problem with the requests that we send
+- Try to use our New Relic account that is connected to the Heroku app to trace the problematic api
+- Are you able to see all the requests the system handled?
+- Are you able to sort requests by average response time?
+startFlow:
+  do:
+  - actionId: bot_message
+    params:
+      person: head-of-rd
+      messages:
+      - text: Good, ok, now listen -
+        delay: 600
+      - text: I’m at this executive tech-free retreat, and my smuggled phone is exploding with notifications—we’re viral, nothing works, **website down**.
+        delay: 1000
+      - text: I have to get back to the spirit quest tent before they notice I’m gone. Thankfully all the execs are there, but we don’t have much time, at least 2 C-levels have phones taped to their bodies, don’t ask how I know. So **check out what’s wrong** AND FIX IT.
+        delay: 2500
+      - text: Ah, you need instructions. Right. Start by going to our **New Relic dashboard** and finding the **cause of the sluggishness**. It’s gonna be **/api/something**. Send me the exact **problematic endpoint** here and I’ll check it after my next vision.
+        delay: 2500
+  - actionId: delay
+    params:
+      milliseconds: 60000
+  - actionId: network_http_load
+    params:
+        url: https://${user.backendHerokuAppName}.herokuapp.com
+        connections: 50
+        duration: 1200
+        requests:
+        - /api/items?limit=1000&offset=0
+        - /api/tags
+        - /api/items/item-74-hn25x0
+        - /api/items/item-74-hn25x0/comments
+        - /api/profiles/user74
+        - /api/items?seller=user74&limit=1000&offset=0
+trigger:
+  type: user_message
+  params:
+    person: head-of-rd
+  flowNode:
+    if:
+      conditions:
+      - conditionId: text_match_regex
+        params:
+          text: ${userMessageText}
+          regex: ^/api/items
+          flags: i
+      then:
+        do:
+        - actionId: bot_message
+          params:
+            person: head-of-rd
+            messages:
+            - text: Oh, right! that makes sense. It’s exactly like last time.
+              delay: 1000
+        - actionId: finish_step
+      else:
+        do:
+        - actionId: bot_message
+          params:
+            person: head-of-rd
+            messages:
+            - text: Are you sure? It doesn’t make sense to me, can you please check again?
+              delay: 500
