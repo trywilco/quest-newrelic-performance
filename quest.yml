@@ -14,6 +14,10 @@ skills:
 - observability
 - debugging
 - performance
+learningObjectives:
+- Pinpointing the source of a performance issue 
+- Measuring response time 
+- Solving an issue and testing your fix 
 questDependency: newrelic_observability
 solutionBranch: quest_solution/performance
 resources:
