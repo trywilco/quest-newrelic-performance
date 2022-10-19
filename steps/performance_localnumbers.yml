@@ -1,4 +1,6 @@
 id: performance_localnumbers
+learningObjectives:
+- Measuring response time 
 hints:
 - Run `autocannon -a 100 -c 100` to test-simulate 100 users
 - Make sure you have enough items locally
