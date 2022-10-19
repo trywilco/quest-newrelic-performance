@@ -1,4 +1,6 @@
 id: performance_rootcause
+learningObjectives:
+- Solving an issue and testing your fix 
 hints:
 - Can you see the DB query(ies) that happens behind the scene? Check how many queries do we run for a single request.
 - Can we merge some of the DB queries into a single query somehow?

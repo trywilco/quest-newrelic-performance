@@ -1,4 +1,6 @@
 id: performance_detect
+learningObjectives:
+- Pinpointing the source of a performance issue 
 hints:
 - Try to open the frontend app and see if there’s any problem with the requests that we send
 - Try to use our New Relic account that is connected to the Heroku app to trace the problematic api
