@@ -3,7 +3,7 @@ learningObjectives:
 - Pinpointing the source of a performance issue 
 hints:
 - Try to open the frontend app and see if there’s any problem with the requests that we send
-- Try to use our New Relic account that is connected to the Heroku app to trace the problematic api
+- Try to use our New Relic account that is connected to your app to trace the problematic api
 - Are you able to see all the requests the system handled?
 - Are you able to sort requests by average response time?
 startFlow:
@@ -25,7 +25,7 @@ startFlow:
       milliseconds: 60000
   - actionId: network_http_load
     params:
-        url: https://${user.backendHerokuAppName}.herokuapp.com
+        url: https://${user.awsAnythink.tenantName}-api.staging.anythink.market
         connections: 50
         duration: 1200
         requests:
@@ -62,5 +62,5 @@ trigger:
           params:
             person: head-of-rd
             messages:
-            - text: Are you sure? It doesn’t make sense to me, can you please check again?
+            - text: Are you sure? It doesn't make sense to me, can you please check again?
               delay: 500
