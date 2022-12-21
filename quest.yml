@@ -20,7 +20,7 @@ resources:
   - name: k8s
     config:
       deploy: true
-      clear: []
+      clear:
 
 messages:
   questStarted:
