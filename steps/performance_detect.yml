@@ -25,7 +25,7 @@ startFlow:
       milliseconds: 60000
   - actionId: network_http_load
     params:
-        url: https://${user.awsAnythink.tenantName}-api.staging.anythink.market
+        url: ${user.K8sBackendUrl}
         connections: 50
         duration: 1200
         requests:

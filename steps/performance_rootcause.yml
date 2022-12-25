@@ -37,7 +37,7 @@ trigger:
             params:
               person: head-of-rd
               messages:
-                text: Thanks! going over it right away
+              - text: Thanks! going over it right away
                 delay: 300
         github_pr_workflow_complete_success:
           do:
