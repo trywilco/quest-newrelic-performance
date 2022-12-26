@@ -26,15 +26,15 @@ startFlow:
   - actionId: network_http_load
     params:
         url: ${user.K8sBackendUrl}
-        connections: 50
+        connections: 5
         duration: 1200
         requests:
-        - /api/items?limit=1000&offset=0
+        - /api/items?limit=100&offset=0
         - /api/tags
         - /api/items/item-74-hn25x0
         - /api/items/item-74-hn25x0/comments
         - /api/profiles/user74
-        - /api/items?seller=user74&limit=1000&offset=0
+        - /api/items?seller=user74&limit=100&offset=0
 trigger:
   type: user_message
   params:
