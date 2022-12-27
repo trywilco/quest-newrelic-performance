@@ -20,6 +20,8 @@ startFlow:
         delay: 2500
       - text: Ah, you need instructions. Right. Start by going to our **New Relic dashboard** and finding the **cause of the sluggishness**. It’s gonna be **/api/something**. Send me the exact **problematic endpoint** here and I’ll check it after my next vision.
         delay: 2500
+      - text: "As a reminder, you can find your monitored app [here](https://one.newrelic.com/?duration=3600000), click on it, and you'll see the summary dashboard "
+        delay: 2500
   - actionId: delay
     params:
       milliseconds: 60000
