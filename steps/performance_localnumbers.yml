@@ -22,7 +22,7 @@ startFlow:
         delay: 3000
       - text: Also, make sure you have **at least 100 items** in your local database to simulate a real load on the system. 
         delay: 2000
-      - text: "If you don't, you can run our seeding script \`./seeds.sh\` once before running the autocannon tool. You can do so by opening a bash session inside the backend container with the cmd `docker exec -it <container-name> bash` and run the seeds inside the backend directory "
+      - text: "If you don't, you can run our seeding script `./seeds.sh` once before running the autocannon tool. You can do so by opening a bash session inside the backend container with the cmd `docker exec -it <container-name> bash` and run the seeds inside the backend directory "
         delay: 1500
       - text: When you're done, **send me the average latency** recorded by autocannon (in ms), and send only the number itself.
         delay: 1000
