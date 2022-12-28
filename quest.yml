@@ -17,8 +17,11 @@ skills:
 questDependency: newrelic_observability
 solutionBranch: quest_solution/performance
 resources:
-- name: heroku_backend
-- name: heroku_frontend
+  - name: k8s
+    config:
+      deploy: true
+
+
 messages:
   questStarted:
     person: head-of-rd
