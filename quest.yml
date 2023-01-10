@@ -25,5 +25,9 @@ messages:
   questFinished:
     person: head-of-rd
     messages:
-    - text: AMAZING NEWS! everything seems to have gotten back to normal! I saved the day and you helped!! Great work on this assignment. No time to rest, though - your [next assignment ](${platform.home}) is just one click away ✨
+    - text: AMAZING NEWS! everything seems to have gotten back to normal! I saved the day and you helped!! Great work on this assignment. 
       delay: 1500
+    - text: No time to rest, though - it's time to choose your next project ✨
+      delay: 1700
+      components:
+      - type: schedule_learning_time
