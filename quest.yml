@@ -4,6 +4,7 @@ description: "The only systems that don’t have any bugs in production are the 
 summary: "Wow, what a ride, huh?\nToday we tackled one of the hardest issues an engineer can encounter: an urgent performance issue live in production. \nIt usually starts with some kind of bottleneck that becomes apparent during a rare edge case, such as an ad going viral. This is when we begin to see that some pieces of code are just not optimized enough for a spike in traffic, clogging the whole system and affecting the users.\n\nThe first order of business is detecting where exactly this happens. This is why it’s so important to have monitoring systems in place. Then, before attempting to fix the problem, we have to establish some kind of benchmark to understand how “slow” the problematic operation is— because only that way we’ll be sure that we’ve fixed the issue when we deploy a fix. After the benchmarking is done, we can push code and verify that the system is now faster and able to handle the load."
 slogan: Debug. Optimize. Overcome.
 level: advance
+repository: https://github.com/trywilco/Anythink-Market-NewRelic-Performance
 steps:
 - performance_detect
 - performance_localnumbers
