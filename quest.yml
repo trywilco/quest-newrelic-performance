@@ -16,7 +16,6 @@ skills:
 - debugging
 - performance
 questDependency: newrelic_observability
-solutionBranch: quest_solution/performance
 resources:
   - name: k8s
     config:
