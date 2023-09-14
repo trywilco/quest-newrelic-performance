@@ -21,7 +21,7 @@ resources:
   - name: k8s
     config:
       deploy: true
-      
+  - name: newrelic      
 messages:
   questFinished:
     person: head-of-rd
